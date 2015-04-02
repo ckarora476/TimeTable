@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page</title>
+    <script src="list.js"></script>
+    <link rel="stylesheet" type="text/css" href="liststyle.css">
+  </head>
+  
+  <body>
+    <div id="students">
+      <input class="search" />
+      <button class="sort" data-sort="fname">Sort by first name</button>
+      <button class="sort" data-sort="lname">Sort by last name</button>
+      <button class="sort" data-sort="average">Sort by average</button>
+
+      <ul class="list">
+        <li>
+          <span class="fname">David</span>
+          <span class="lname">Cohen</span>
+          <span class="average">98</span>
+        </li>
+        <li>
+          <span class="fname">Micheal</span>
+          <span class="lname">Stewarts</span>
+          <span class="average">87</span>
+        </li>
+        <li>
+          <span class="fname">Sachin</span>
+          <span class="lname">Tendulkar</span>
+          <span class="average">98</span>
+        </li>
+        <li>
+          <span class="fname">Ali</span>
+          <span class="lname">Asgar</span>
+          <span class="average">89</span>
+        </li>
+        <li>
+          <span class="fname">Danone</span>
+          <span class="lname">Narang</span>
+          <span class="average">56</span>
+        </li>
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+        var options = {
+          valueNames: [ 'fname', 'lname', 'average']
+        };
+
+        var students = new List('students', options);
+    </script>
+  </body>
+</html>
