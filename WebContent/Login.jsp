@@ -41,10 +41,10 @@
 
 					<p>
 						<span class="fontawesome-user"></span><input type="text"
-							name="userid" value="Username" placeholder="Username">
+							name="userid"  placeholder="Username">
 					<p>
 						<span class="fontawesome-lock"></span><input type="password"
-							name="userpass" value="Password" placeholder="Password">
+							name="userpass"  placeholder="Password">
 					<p>
 						<input type="submit" value="Sign In">
 					</p>

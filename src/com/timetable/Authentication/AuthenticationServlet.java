@@ -46,7 +46,7 @@ public class AuthenticationServlet extends HttpServlet {
 				if (status) {
 					role = rs.getString("ROLE");
 					RequestDispatcher rd = request
-							.getRequestDispatcher("index.jsp");
+							.getRequestDispatcher("UserHome.jsp");
 					rd.forward(request, response);
 
 				} else {
