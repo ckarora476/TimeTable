@@ -9,7 +9,7 @@
 <head>
 <body>
 <%
-SubjectList sub=new SubjectList();  
+	DBHandler sub=new DBHandler();  
 ArrayList<String> list=sub.getSubjectList();
    for(String s:list){
 %>

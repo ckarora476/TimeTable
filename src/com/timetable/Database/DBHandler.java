@@ -6,15 +6,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class SubjectList {
-    Connection connection;
-    static final String username = "chirag";
-	static final String password = "chirag";
-	static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+public class DBHandler {
+    static Connection connection;
+    static final String DB_Username = "chirag";
+	static final String DB_Password = "chirag";
+	static final String DB_URL = "jdbc:oracle:thin:@localhost:1521:xe";
 	
     public  ArrayList<String> getSubjectList() throws SQLException {
 		ArrayList<String> subList = new ArrayList<>();
-		Connection conn = getConnector();
+		Connection conn = getConnection();
 		PreparedStatement ps = conn
 				.prepareStatement("SELECT subject_id FROM SUBJECT_INFO");
 		ResultSet rs = ps.executeQuery();
@@ -27,7 +27,7 @@ public class SubjectList {
 		return subList;
 
 	}
-	public  Connection getConnector() {
+	public static Connection getConnection() {
 		System.out.println("-------- Oracle JDBC Connection Testing ------");
 
 		try {
@@ -47,7 +47,7 @@ public class SubjectList {
 
 		try {
 
-			connection = DriverManager.getConnection(URL, username, password);
+			connection = DriverManager.getConnection(DB_URL, DB_Username, DB_Password);
 
 		} catch (SQLException e) {
 
