@@ -3,6 +3,8 @@ package com.timetable.Authentication;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,23 +23,51 @@ import com.timetable.Database.DBHandler;
 @WebServlet("/authenticate")
 public class AuthenticationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	   
-		String username=request.getParameter("userid");
-		String password=request.getParameter("userpass");
-		String query="SELECT PASSWORD,ROLE FROM AUTH WHERE USER_ID=?";
-		if(username!=null && password!=null)
-		{
-			Connection conn=DBHandler.getConnection();
-			
-			PreparedStatement psPreparedStatement=conn.prepareStatement(Query);
-					
-		}
-		
-		
-		
-		
-	}
 
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
+		String username = request.getParameter("userid");
+		String password = request.getParameter("userpass");
+		String query = "SELECT PASSWORD,ROLE FROM AUTH WHERE USER_ID=? AND PASSWORD=?";
+		PreparedStatement ps;
+		ResultSet rs;
+		String role;
+		Connection conn = DBHandler.getConnection();
+
+			try {
+				ps = conn.prepareStatement(query);
+				ps.setString(1, username);
+				ps.setString(2, password);
+				rs = ps.executeQuery();
+
+				boolean status = rs.next();
+				String s;
+				if (status) {
+					role = rs.getString("ROLE");
+					RequestDispatcher rd = request
+							.getRequestDispatcher("index.jsp");
+					rd.forward(request, response);
+
+				} else {
+
+					RequestDispatcher rd = request
+							.getRequestDispatcher("Login.jsp");
+					request.setAttribute("err", "Invalid username/password");
+					rd.forward(request, response);
+
+				}
+
+			} catch (SQLException e) {
+
+				RequestDispatcher rd = request
+						.getRequestDispatcher("Login.jsp");
+				request.setAttribute("err", "Invalid username/password");
+				rd.forward(request, response);
+
+			}
+
+		}
+
+	
 }
