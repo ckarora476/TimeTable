@@ -1,6 +1,6 @@
 package com.timetable.DataModels;
 
-public class Teachers {
+public class Teacher {
 	private String id;
 	private String name;
 	public String getId() {

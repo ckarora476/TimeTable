@@ -1,3 +1,6 @@
+<%@page import="com.timetable.DataModels.Timeslots"%>
+<%@page import="com.timetable.DataModels.Subject"%>
+<%@page import="com.timetable.DataModels.TutGroup"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -9,12 +12,11 @@
 <head>
 <body>
 <%
-	DBHandler sub=new DBHandler();  
-ArrayList<String> list=sub.getSubjectList();
-   for(String s:list){
+InfoPopulator.populateTimeSlots();
+ArrayList<Timeslots> grpList=InfoPopulator.timeSlotList;
+for(Timeslots t:grpList){
 %>
-<h1> <%=s%> </h1>
-
+<h1> <%=t.getStart_time() +"   " + t.getEnd_time()%> </h1>
 <% } %>
 
 </body>

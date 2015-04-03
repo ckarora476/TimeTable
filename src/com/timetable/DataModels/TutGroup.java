@@ -1,19 +1,19 @@
 package com.timetable.DataModels;
 
-public class TutGroups {
+public class TutGroup {
 
 	private String name;
-	private String id;
+	private int  id;
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	
