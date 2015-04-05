@@ -67,7 +67,7 @@ public class InfoPopulator {
 
 	public static void populateTutGroups() {
 		Connection conn = DBHandler.getConnection();
-		String query = "SELECT * FROM TUTGROUPS";
+		String query = "SELECT * FROM TUTGROUPS ORDER BY GROUPID";
 		try {
 			PreparedStatement ps = conn.prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
@@ -104,7 +104,7 @@ public class InfoPopulator {
 
 	public static void populateTimeSlots() {
 		Connection conn = DBHandler.getConnection();
-		String query = "SELECT * FROM TIMESLOTS";
+		String query = "SELECT * FROM TIMESLOTS ORDER BY TIME_ID";
 		try {
 			PreparedStatement ps = conn.prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
@@ -121,7 +121,7 @@ public class InfoPopulator {
 		}
 	}
 	
-	static void populateAll()
+	public static void populateAll()
 	{
 		populateRooms();
 		populateSubjects();

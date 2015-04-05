@@ -1,11 +1,11 @@
 package com.timetable.DataModels;
 
-public enum LTP {
+public enum Ltp {
     LECTURE(1),TUTORIAL(2),PRACTICAL(3);
 	
-    public int id;
+    public final int id;
     
-    LTP(int id)
+    Ltp(int id)
     {
     	this.id=id;
     }
