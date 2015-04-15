@@ -14,15 +14,15 @@
 <!-- Bootstrap Core CSS -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Custom CSS -->
-<link href="css/userhome.css" rel="stylesheet">
-
 <!-- Morris Charts CSS -->
 <link href="bootstrap/css/plugins/morris.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
 	type="text/css">
+
+<!-- Custom CSS -->
+<link href="css/userhome.css" rel="stylesheet">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,7 +43,7 @@
 			<div class="container-fluid">
 
 				<!-- Page Heading -->
-				<div class="row">
+				<div class="row" style="background-color:#FFFFFF">
 					<div class="col-lg-12">
 						<h1 class="page-header">Time Tables</h1>
 						<ol class="breadcrumb">
@@ -59,7 +59,7 @@
 					<div>
 
 						<div>
-							<table class="table table-bordered table-hover">
+							<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
 								<thead>
 									<tr>
 										<div id="Day">

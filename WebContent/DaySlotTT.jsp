@@ -42,7 +42,7 @@
  <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <div class="row">
+                <div class="row" style="background-color:#FFFFFF">
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             Faculty Time Table
@@ -55,8 +55,8 @@
 
             </div>
             <!-- /.container-fluid -->
-            <form action="TimeTableDisplay.html">
-            <div class="form-group">
+            <form action="TimeTableDisplay.html" style="background-color:#FFFFFF">
+            <div class="form-group" >
                                 <label>Select Day</label>
                                 <select  class="form-control">
                                     <option>Monday</option>

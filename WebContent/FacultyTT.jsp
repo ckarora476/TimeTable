@@ -38,13 +38,13 @@
 		<%@ include file="Header.jsp"%>
 		<%@ include file="Navbar.jsp"%>
 
-		<div id="page-wrapper">
+		<div id="page-wrapper" >
 
 
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <div class="row">
+                <div class="row" style="background-color:#FFFFFF">
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             Faculty Time Table
@@ -57,8 +57,8 @@
 
             </div>
             <!-- /.container-fluid -->
-            <form action="TimeTableDisplay.jsp">
-            <div class="form-group">
+            <form action="TimeTableDisplay.jsp" style="background-color:#FFFFFF">
+            <div class="form-group" >
                                 <label>Select Faculty</label>
                                 <select  class="form-control">
                                     <option>RKT</option>
@@ -68,7 +68,7 @@
                                     <option></option>
                                 </select>
                             </div>
-                            <input type="submit" value="OK">
+                            <input type="submit" value="OK" class="btn btn-default">
                 </form>
 
 		</div>
