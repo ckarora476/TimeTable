@@ -68,23 +68,26 @@
 
 			</div>
 			<!-- /.container-fluid -->
-			<form role="form" style="background-color: #FFFFFF">
+			<form role="form" style="background-color: #FFFFFF" action="entry"
+				method="post">
 				<div>
-					<label>Teacher</label> <select class="form-control" id="teachers">
+					<label>Teacher</label> <select name="teacher" class="form-control"
+						id="teachers">
 						<option></option>
 						<%
 							ArrayList<Teacher> teacherList = (ArrayList<Teacher>) session
 									.getAttribute("teacherList");
 							for (Teacher t : teacherList) {
 						%>
-						<option><%=t.getName() + "(" + t.getId() + ")"%></option>
+						<option value=<%=t.getId()%>><%=t.getName() + "(" + t.getId() + ")"%></option>
 						<%
 							}
 						%>
 					</select>
 				</div>
 				<div class="form-group">
-					<label>Subject</label> <select class="form-control" id="subjects">
+					<label>Subject</label> <select class="form-control" id="subjects"
+						name="subject">
 						<option></option>
 						<%
 							ArrayList<Subject> subList = (ArrayList<Subject>) session
@@ -92,14 +95,15 @@
 
 							for (Subject s : subList) {
 						%>
-						<option><%=s.getSubject_id() + ":" + s.getSubject_name()%></option>
+						<option value=<%=s.getSubject_id()%>><%=s.getSubject_id() + ":" + s.getSubject_name()%></option>
 						<%
 							}
 						%>
 					</select>
 				</div>
 				<div class="form-group">
-					<label>Time</label> <select class="form-control" id="timeslots">
+					<label>Time</label> <select class="form-control" id="timeslots"
+						name="slot">
 						<option></option>
 						<%
 							ArrayList<Timeslots> timeSlotList = (ArrayList<Timeslots>) session
@@ -107,7 +111,7 @@
 
 							for (Timeslots t : timeSlotList) {
 						%>
-						<option><%=t.getStart_time() + ":00" + "-" + t.getEnd_time()
+						<option value=<%=t.getId()%>><%=t.getStart_time() + ":00" + "-" + t.getEnd_time()
 						+ ":00"%></option>
 						<%
 							}
@@ -115,19 +119,20 @@
 					</select>
 				</div>
 				<div class="form-group">
-					<label>Day</label> <select class="form-control" id="day">
+					<label>Day</label> <select class="form-control" id="day" name="day">
 						<option></option>
 						<%
 							for (Day d : Day.values()) {
 						%>
-						<option><%=d%></option>
+						<option value=<%=d.id%>><%=d%></option>
 						<%
 							}
 						%>
 					</select>
 				</div>
 				<div class="form-group">
-					<label>Room Number</label> <select class="form-control" id="room">
+					<label>Room Number</label> <select class="form-control" id="room"
+						name="room">
 						<option></option>
 						<%
 							ArrayList<Room> roomList = (ArrayList<Room>) session
@@ -135,7 +140,7 @@
 
 							for (Room r : roomList) {
 						%>
-						<option><%=r.getRoom_no()%></option>
+						<option value=<%=r.getId()%>><%=r.getRoom_no()%></option>
 						<%
 							}
 						%>
@@ -143,7 +148,7 @@
 				</div>
 				<div class="form-group">
 					<label>Group Start</label> <select class="form-control"
-						id="tutgroupst">
+						id="tutgroupst" name="groupstart">
 						<option></option>
 						<%
 							ArrayList<TutGroup> tutGroupList = (ArrayList<TutGroup>) session
@@ -151,7 +156,7 @@
 
 							for (TutGroup tut : tutGroupList) {
 						%>
-						<option><%=tut.getName()%></option>
+						<option value=<%=tut.getId()%>><%=tut.getName()%></option>
 						<%
 							}
 						%>
@@ -159,12 +164,12 @@
 				</div>
 				<div class="form-group">
 					<label>Group End</label> <select class="form-control"
-						id="tutgroupend">
+						id="tutgroupend" name="groupend">
 						<option></option>
 						<%
 							for (TutGroup tut : tutGroupList) {
 						%>
-						<option><%=tut.getName()%></option>
+						<option value=<%=tut.getId()%>><%=tut.getName()%></option>
 						<%
 							}
 						%>
@@ -173,12 +178,12 @@
 				<div class="form-group">
 
 					<label>Lecture/Tutorial/Practical</label> <select
-						class="form-control" id="LTP">
+						class="form-control" id="LTP" name="ltp">
 						<option></option>
 						<%
 							for (Ltp a : Ltp.values()) {
 						%>
-						<option><%=a%></option>
+						<option value=<%=a.id%>><%=a%></option>
 						<%
 							}
 						%>
