@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.timetable.DataModels.*"%>
 <html lang="en">
 
 <head>
@@ -39,52 +41,53 @@
 		<%@ include file="Navbar.jsp"%>
 
 		<div id="page-wrapper">
- <div class="container-fluid">
+			<div class="container-fluid">
 
-                <!-- Page Heading -->
-                <div class="row" style="background-color:#FFFFFF">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Faculty Time Table
-                            
-                        </h1>
-                        
-                    </div>
-                </div>
-                <!-- /.row -->
+				<!-- Page Heading -->
+				<div class="row" style="background-color: #FFFFFF">
+					<div class="col-lg-12">
+						<h1 class="page-header">Faculty Time Table</h1>
 
-            </div>
-            <!-- /.container-fluid -->
-            <form action="TimeTableDisplay.html" style="background-color:#FFFFFF">
-            <div class="form-group" >
-                                <label>Select Day</label>
-                                <select  class="form-control">
-                                    <option>Monday</option>
-                                    <option>Tuseday</option>
-                                    <option>Wednesday</option>
-                                    <option>Thrusday</option>
-                                    <option>Friday</option>
-                                </select>
-                            
-                 	<div class="form-group">
-                                <label>Select Time-Slot</label>
-                                <select  class="form-control">
-                                    <option>8-9</option>
-                                    <option>9-10</option>
-                                    <option>10-11</option>
-                                    <option>12-1</option>
-                                    <option>1-2</option>
-                                    <option>2-3</option>
-                                    <option>3-4</option>
-                                    <option>4-5</option>
-                                    
-                                </select>
-                            </div>        
-                            </div>               
-                            <input type="submit" value="OK" class="btn btn-default">
-                </form>
+					</div>
+				</div>
+				<!-- /.row -->
 
-            
+			</div>
+			<!-- /.container-fluid -->
+			<form action="TimeTableDisplay.html"
+				style="background-color: #FFFFFF">
+				<div class="form-group">
+					<label>Select Day</label> <select class="form-control" name="day">
+						<%
+							for (Day d : Day.values()) {
+						%>
+						<option value=<%=d.id%>><%=d%></option>
+						<%
+							}
+						%>
+					</select>
+
+					<div class="form-group">
+						<label>Select Time-Slot</label> <select class="form-control">
+							<%
+							ArrayList<Timeslots> timeSlotList = (ArrayList<Timeslots>) session
+									.getAttribute("timeSlotList");
+
+							for (Timeslots t : timeSlotList) {
+						%>
+							<option value=<%=t.getId()%>><%=t.getStart_time() + ":00" + "-" + t.getEnd_time()
+						+ ":00"%></option>
+							<%
+							}
+						%>
+
+						</select>
+					</div>
+				</div>
+				<input type="submit" value="OK" class="btn btn-default" style="margin:0 auto;display:table">
+			</form>
+
+
 		</div>
 		<!-- /#page-wrapper -->
 

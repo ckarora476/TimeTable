@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.timetable.DataModels.*"%>
 
 <head>
 
@@ -59,15 +61,21 @@
             <form action="TimeTableDisplay.jsp" style="background-color:#FFFFFF">
             <div class="form-group" >
                                 <label>Select Subject</label>
-                                <select  class="form-control">
-                                    <option>Business Inteligence</option>
-                                    <option>Ethical Hacking</option>
-                                    <option>Embeded System</option>
-                                    <option>Project</option>
-                                    <option></option>
+                                <select  class="form-control" name="subject">
+                                						<%
+							ArrayList<Subject> subList = (ArrayList<Subject>) session
+									.getAttribute("subjectList");
+
+							for (Subject s : subList) {
+						%>
+						<option value=<%=s.getSubject_id()%>><%=s.getSubject_id() + ":" + s.getSubject_name()%></option>
+						<%
+							}
+						%>
+					
                                 </select>
                             </div>
-                            <input type="submit" value="OK" class="btn btn-default">
+                            <input type="submit" value="OK" class="btn btn-default" style="margin:0 auto;display:table">
                 </form>
 
 		</div>

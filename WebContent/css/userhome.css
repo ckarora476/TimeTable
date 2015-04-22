@@ -6,6 +6,10 @@
 
 /* Global Styles */
 
+.center_cells{
+	text-align:center;
+}
+
 body {
     margin-top: 100px;
     background-color: #FFFFFF;

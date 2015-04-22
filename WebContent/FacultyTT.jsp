@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.timetable.DataModels.*"%>
+
 <html lang="en">
 
 <head>
@@ -38,38 +41,40 @@
 		<%@ include file="Header.jsp"%>
 		<%@ include file="Navbar.jsp"%>
 
-		<div id="page-wrapper" >
+		<div id="page-wrapper">
 
 
-            <div class="container-fluid">
+			<div class="container-fluid">
 
-                <!-- Page Heading -->
-                <div class="row" style="background-color:#FFFFFF">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Faculty Time Table
-                            
-                        </h1>
-                        
-                    </div>
-                </div>
-                <!-- /.row -->
+				<!-- Page Heading -->
+				<div class="row" style="background-color: #FFFFFF">
+					<div class="col-lg-12">
+						<h1 class="page-header">Faculty Time Table</h1>
 
-            </div>
-            <!-- /.container-fluid -->
-            <form action="TimeTableDisplay.jsp" style="background-color:#FFFFFF">
-            <div class="form-group" >
-                                <label>Select Faculty</label>
-                                <select  class="form-control">
-                                    <option>RKT</option>
-                                    <option>RR</option>
-                                    <option>KJK</option>
-                                    <option>TAU</option>
-                                    <option></option>
-                                </select>
-                            </div>
-                            <input type="submit" value="OK" class="btn btn-default">
-                </form>
+					</div>
+				</div>
+				<!-- /.row -->
+
+			</div>
+			<!-- /.container-fluid -->
+			<form action="TimeTableDisplay.jsp" style="background-color: #FFFFFF">
+				<div class="form-group">
+					<label>Select Faculty</label> <select class="form-control"
+						name="teacher">
+						<%
+							ArrayList<Teacher> teacherList = (ArrayList<Teacher>) session
+									.getAttribute("teacherList");
+							for (Teacher t : teacherList) {
+						%>
+						<option value=<%=t.getId()%>><%=t.getName() + "(" + t.getId() + ")"%></option>
+						<%
+							}
+						%>
+
+					</select>
+				</div>
+				<input type="submit" value="OK" class="btn btn-default" style="margin:0 auto;display:table">
+			</form>
 
 		</div>
 		<!-- /#page-wrapper -->

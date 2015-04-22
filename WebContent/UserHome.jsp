@@ -43,7 +43,7 @@
 			<div class="container-fluid">
 
 				<!-- Page Heading -->
-				<div class="row" style="background-color:#FFFFFF">
+				<div class="row" style="background-color: #FFFFFF">
 					<div class="col-lg-12">
 						<h1 class="page-header">Time Tables</h1>
 						<ol class="breadcrumb">
@@ -59,7 +59,8 @@
 					<div>
 
 						<div>
-							<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
+							<table class="table table-bordered table-hover"
+								style="background-color: #FFFFFF">
 								<thead>
 									<tr>
 										<div id="Day">
@@ -105,37 +106,38 @@
 											<th>Monday</th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 
 										<div id="">
-											<th>UCS803 <br> L <br> B209
+											<th class="center_cells">UCS803 <br> L <br>
+												B209
 											</th>
 										</div>
 										<div id="">
-											<th>UEI623 <br> 2EE1(T) <br> E201
+											<th class="center_cells">UEI623 <br> 2EE1(T) <br> E201
 											</th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 									</tr>
 									<tr>
@@ -143,37 +145,37 @@
 											<th>Tuesday</th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 
 										<div id="">
-											<th>UCS803 <br> L <br> B209
+											<th class="center_cells">UCS803 <br> L <br> B209
 											</th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th>UEI623 <br>3EIC <br> UG-CSI
+											<th class="center_cells">UEI623 <br>3EIC <br> UG-CSI
 											</th>
 										</div>
 										<div id="">
-											<th>UEI623 <br>3EIC <br> UG-CSI1
+											<th class="center_cells">UEI623 <br>3EIC <br> UG-CSI1
 											</th>
 										</div>
 									</tr>
@@ -182,38 +184,38 @@
 											<th>Wednesday</th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 
 										<div id="">
-											<th>DEPTT SEMINAR</th>
+											<th class="center_cells">DEPTT SEMINAR</th>
 										</div>
 										<div id="">
-											<th>DEPTT SEMINAR</th>
+											<th class="center_cells">DEPTT SEMINAR</th>
 										</div>
 										<div id="">
-											<th>UCS803 <br> T <br>B209
+											<th class="center_cells">UCS803 <br> T <br>B209
 											</th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th>UEI623 <br>2EE2 <br>UG-CS2
+											<th class="center_cells">UEI623 <br>2EE2 <br>UG-CS2
 											</th>
 										</div>
 										<div id="">
-											<th>UEI623 <br>2EE2 <br>UG-CS2
+											<th class="center_cells">UEI623 <br>2EE2 <br>UG-CS2
 											</th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 									</tr>
 									<tr>
@@ -221,37 +223,37 @@
 											<th>Thrusday</th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th>UEI623 <br>2EEI <br>UG-CS2
+											<th class="center_cells">UEI623 <br>2EEI <br>UG-CS2
 											</th>
 										</div>
 
 										<div id="">
-											<th>UCS803 <br> L <br> B209
+											<th class="center_cells">UCS803 <br> L <br> B209
 											</th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 									</tr>
 									<tr>
@@ -259,35 +261,35 @@
 											<th>Friday</th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 										<div id="">
-											<th></th>
+											<th class="center_cells"></th>
 										</div>
 									</tr>
 
