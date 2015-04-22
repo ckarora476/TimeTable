@@ -16,13 +16,13 @@ import com.timetable.DataModels.TutGroup;
 
 public class InfoPopulator {
 
-	public static ArrayList<Subject> subList=new ArrayList<>();
-	public static ArrayList<Timeslots> timeSlotList=new ArrayList<>();
-	public static ArrayList<Room> roomList=new ArrayList<>();
-	public static ArrayList<Teacher> teacherList=new ArrayList<>();
-	public static ArrayList<TutGroup> tutGroupList=new ArrayList<>();
+	public  ArrayList<Subject> subList=new ArrayList<>();
+	public  ArrayList<Timeslots> timeSlotList=new ArrayList<>();
+	public  ArrayList<Room> roomList=new ArrayList<>();
+	public  ArrayList<Teacher> teacherList=new ArrayList<>();
+	public  ArrayList<TutGroup> tutGroupList=new ArrayList<>();
 
-	public static void populateSubjects() {
+	public  void populateSubjects() {
 		Connection conn = DBHandler.getConnection();
 		String query = "SELECT * FROM SUBJECT_INFO";
 		try {
@@ -45,7 +45,7 @@ public class InfoPopulator {
 
 	}
 
-	public static void populateTeachers() {
+	public  void populateTeachers() {
 		Connection conn = DBHandler.getConnection();
 		String query = "SELECT * FROM TEACHER_RECORD";
 		try {
@@ -65,7 +65,7 @@ public class InfoPopulator {
 
 	}
 
-	public static void populateTutGroups() {
+	public void populateTutGroups() {
 		Connection conn = DBHandler.getConnection();
 		String query = "SELECT * FROM TUTGROUPS ORDER BY GROUPID";
 		try {
@@ -84,7 +84,7 @@ public class InfoPopulator {
 
 	}
 
-	public static void populateRooms() {
+	public  void populateRooms() {
 		Connection conn = DBHandler.getConnection();
 		String query = "SELECT * FROM ROOM";
 		try {
@@ -102,7 +102,7 @@ public class InfoPopulator {
 		}
 	}
 
-	public static void populateTimeSlots() {
+	public void populateTimeSlots() {
 		Connection conn = DBHandler.getConnection();
 		String query = "SELECT * FROM TIMESLOTS ORDER BY TIME_ID";
 		try {
@@ -121,7 +121,7 @@ public class InfoPopulator {
 		}
 	}
 	
-	public static void populateAll()
+	public void populateAll()
 	{
 		populateRooms();
 		populateSubjects();

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.timetable.DataModels.Ltp"%>
 <%@page import="com.timetable.DataModels.Day"%>
 <%@page import="com.timetable.DataModels.TutGroup"%>
@@ -32,13 +33,17 @@
 <!-- Custom Fonts -->
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
 	type="text/css">
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<link
+	href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css"
+	rel="stylesheet" />
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
+
 
 </head>
 <body>
@@ -64,107 +69,133 @@
 			</div>
 			<!-- /.container-fluid -->
 			<form role="form" style="background-color: #FFFFFF">
-				<div class="form-group">
-					<label>Teacher</label> <select class="form-control">
-						<% 
-                                       for(Teacher t:InfoPopulator.teacherList)
-                                       { 
-                                    %>
-						<option><%=t.getName()+"("+t.getId()+")" %></option>
-						<%} %>
-					</select>
-				</div>
-				<div class="form-group">
-					<label>Subject</label> <select class="form-control">
+				<div>
+					<label>Teacher</label> <select class="form-control" id="teachers">
+						<option></option>
 						<%
-                                      for(Subject s:InfoPopulator.subList)
-                                      {  
-                                   %>
-						<option><%=s.getSubject_id()+":"+s.getSubject_name()%></option>
-						<%}%>
+							ArrayList<Teacher> teacherList = (ArrayList<Teacher>) session
+									.getAttribute("teacherList");
+							for (Teacher t : teacherList) {
+						%>
+						<option><%=t.getName() + "(" + t.getId() + ")"%></option>
+						<%
+							}
+						%>
 					</select>
 				</div>
 				<div class="form-group">
-					<label>Time</label> <select class="form-control">
-						<% 
-                                    for(Timeslots t:InfoPopulator.timeSlotList)
-                                    {
-                                %>
-						<option><%=t.getStart_time()+":00"+"-"+t.getEnd_time()+":00" %></option>
-						<%} %>
+					<label>Subject</label> <select class="form-control" id="subjects">
+						<option></option>
+						<%
+							ArrayList<Subject> subList = (ArrayList<Subject>) session
+									.getAttribute("subjectList");
+
+							for (Subject s : subList) {
+						%>
+						<option><%=s.getSubject_id() + ":" + s.getSubject_name()%></option>
+						<%
+							}
+						%>
 					</select>
 				</div>
 				<div class="form-group">
-					<label>Day</label> <select class="form-control">
-						<% 
-                                     for(Day d:Day.values())
-                                     {
-                                   %>
+					<label>Time</label> <select class="form-control" id="timeslots">
+						<option></option>
+						<%
+							ArrayList<Timeslots> timeSlotList = (ArrayList<Timeslots>) session
+									.getAttribute("timeSlotList");
+
+							for (Timeslots t : timeSlotList) {
+						%>
+						<option><%=t.getStart_time() + ":00" + "-" + t.getEnd_time()
+						+ ":00"%></option>
+						<%
+							}
+						%>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Day</label> <select class="form-control" id="day">
+						<option></option>
+						<%
+							for (Day d : Day.values()) {
+						%>
 						<option><%=d%></option>
-						<%} %>
+						<%
+							}
+						%>
 					</select>
 				</div>
 				<div class="form-group">
-					<label>Room Number</label> <select class="form-control">
+					<label>Room Number</label> <select class="form-control" id="room">
+						<option></option>
 						<%
-                                       for(Room r:InfoPopulator.roomList)
-                                       {	   
-                                    %>
+							ArrayList<Room> roomList = (ArrayList<Room>) session
+									.getAttribute("roomList");
+
+							for (Room r : roomList) {
+						%>
 						<option><%=r.getRoom_no()%></option>
-						<%} %>
-					</select>
-				</div>
-				<div class="form-group">
-					<label>Group Start</label> <select class="form-control">
 						<%
-                                      for(TutGroup tut:InfoPopulator.tutGroupList)
-                                      { 
-                                   %>
-						<option><%=tut.getName()%></option>
-						<%}%>
+							}
+						%>
 					</select>
 				</div>
 				<div class="form-group">
-					<label>Group End</label> <select class="form-control">
+					<label>Group Start</label> <select class="form-control"
+						id="tutgroupst">
+						<option></option>
 						<%
-                                      for(TutGroup tut:InfoPopulator.tutGroupList)
-                                      { 
-                                   %>
+							ArrayList<TutGroup> tutGroupList = (ArrayList<TutGroup>) session
+									.getAttribute("tutGroupList");
+
+							for (TutGroup tut : tutGroupList) {
+						%>
 						<option><%=tut.getName()%></option>
-						<%}%>
+						<%
+							}
+						%>
 					</select>
 				</div>
 				<div class="form-group">
+					<label>Group End</label> <select class="form-control"
+						id="tutgroupend">
+						<option></option>
+						<%
+							for (TutGroup tut : tutGroupList) {
+						%>
+						<option><%=tut.getName()%></option>
+						<%
+							}
+						%>
+					</select>
+				</div>
+				<div class="form-group">
+
 					<label>Lecture/Tutorial/Practical</label> <select
-						class="form-control">
+						class="form-control" id="LTP">
+						<option></option>
 						<%
-                                   	for(Ltp a:Ltp.values())
-                                   	{
-                                   %>
+							for (Ltp a : Ltp.values()) {
+						%>
 						<option><%=a%></option>
-						<%} %>
+						<%
+							}
+						%>
 					</select>
 				</div>
-				<button type="submit" class="btn btn-primary">Another
-					Entry</button>
-				<button type="submit" class="btn btn-success">Submit
-					Button</button>
+				<button type="submit" class="btn btn-primary">Another Entry</button>
+				<button type="submit" class="btn btn-success">Submit Button</button>
 				<button type="reset" class="btn btn-danger">Reset Button</button>
 
 			</form>
 		</div>
-
 	</div>
 	<!-- /#page-wrapper -->
 
 	</div>
 	<!-- /#wrapper -->
-
-	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
-
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="js/EntryForm.js"></script>
 
 </body>
 
