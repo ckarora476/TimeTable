@@ -57,25 +57,23 @@
 
 			</div>
 			<!-- /.container-fluid -->
-			<form action="TimeTableDisplay.jsp" style="background-color: #FFFFFF">
-				<div class="form-group">
-					<label>Select Faculty</label> <select class="form-control"
-						name="teacher">
-						<%
-							ArrayList<Teacher> teacherList = (ArrayList<Teacher>) session
-									.getAttribute("teacherList");
-							for (Teacher t : teacherList) {
-						%>
-						<option value=<%=t.getId()%>><%=t.getName() + "(" + t.getId() + ")"%></option>
-						<%
-							}
-						%>
+			<div class="form-group" style="background-color: #FFFFFF">
+				<label>Select Faculty</label> <select class="form-control"
+					id="faculty" name="teacher">
+					<%
+						ArrayList<Teacher> teacherList = (ArrayList<Teacher>) session
+								.getAttribute("teacherList");
+						for (Teacher t : teacherList) {
+					%>
+					<option value=<%=t.getId()%>><%=t.getName() + "(" + t.getId() + ")"%></option>
+					<%
+						}
+					%>
 
-					</select>
-				</div>
-				<input type="submit" value="OK" class="btn btn-default" style="margin:0 auto;display:table">
-			</form>
-
+				</select> <input id="display" type="submit" value="OK"
+					class="btn btn-default" style="margin: 0 auto; display: table">
+			
+			<div id="content" style="background-color: #FFFFFF"></div>
 		</div>
 		<!-- /#page-wrapper -->
 
@@ -87,6 +85,7 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/FacultyTT.js"></script>
 
 </body>
 

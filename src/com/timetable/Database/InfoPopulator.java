@@ -21,7 +21,6 @@ public class InfoPopulator {
 	public  ArrayList<Room> roomList=new ArrayList<>();
 	public  ArrayList<Teacher> teacherList=new ArrayList<>();
 	public  ArrayList<TutGroup> tutGroupList=new ArrayList<>();
-
 	public  void populateSubjects() {
 		Connection conn = DBHandler.getConnection();
 		String query = "SELECT * FROM SUBJECT_INFO";
@@ -75,7 +74,8 @@ public class InfoPopulator {
 			while (rs.next()) {
 				grp = new TutGroup();
 				grp.setId(Integer.parseInt(rs.getString("GROUPID")));
-				grp.setName(rs.getString("GROUPNAME"));
+				grp.setPrefix(rs.getString("PREFIX"));
+				grp.setNum(rs.getInt("NUM"));
 				tutGroupList.add(grp);
 			}
 		} catch (SQLException e) {
@@ -128,7 +128,22 @@ public class InfoPopulator {
 		populateTimeSlots();
 		populateTutGroups();
 		populateTeachers();
+				
+	}
+	public String getTeacherName(String teacherId)
+	{
+		String teacherName=" ";
+		for(Teacher t:teacherList)
+		{
+			if(t.getId().equals(teacherId))
+			{
+				teacherName=t.getName();
+				break;
+			}
+			
+		}
 		
+		return teacherName;
 	}
 
 }

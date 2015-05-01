@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.connector.Request;
 
@@ -29,7 +30,7 @@ public class AuthenticationServlet extends HttpServlet {
 
 		String username = request.getParameter("userid");
 		String password = request.getParameter("userpass");
-		String query = "SELECT PASSWORD,ROLE FROM AUTH WHERE USER_ID=? AND PASSWORD=?";
+		String query = "SELECT PASSWORD,ROLE,TID FROM AUTH WHERE USER_ID=? AND PASSWORD=?";
 		PreparedStatement ps;
 		ResultSet rs;
 		String role;
@@ -45,6 +46,8 @@ public class AuthenticationServlet extends HttpServlet {
 				String s;
 				if (status) {
 					role = rs.getString("ROLE");
+					HttpSession session=request.getSession();
+					session.setAttribute("tid", rs.getString("TID"));
 					RequestDispatcher rd = request
 							.getRequestDispatcher("Info.jsp");
 					rd.forward(request, response);

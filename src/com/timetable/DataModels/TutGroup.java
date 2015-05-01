@@ -2,13 +2,20 @@ package com.timetable.DataModels;
 
 public class TutGroup {
 
-	private String name;
+	private String prefix;
+	private int num;
 	private int  id;
-	public String getName() {
-		return name;
+	public String getPrefix() {
+		return prefix;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setPrefix(String prefix) {
+		this.prefix = prefix;
+	}
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
 	}
 	public int getId() {
 		return id;
@@ -16,6 +23,4 @@ public class TutGroup {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	
 }

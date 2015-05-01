@@ -44,6 +44,7 @@
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
 
+<script src="js/EntryForm.js"></script>
 
 </head>
 <body>
@@ -156,7 +157,7 @@
 
 							for (TutGroup tut : tutGroupList) {
 						%>
-						<option value=<%=tut.getId()%>><%=tut.getName()%></option>
+						<option value=<%=tut.getId()%>><%=tut.getPrefix()+"-"+tut.getNum()%></option>
 						<%
 							}
 						%>
@@ -169,7 +170,7 @@
 						<%
 							for (TutGroup tut : tutGroupList) {
 						%>
-						<option value=<%=tut.getId()%>><%=tut.getName()%></option>
+						<option value=<%=tut.getId()%>><%=tut.getPrefix()+"-"+tut.getNum()%></option>
 						<%
 							}
 						%>
@@ -200,7 +201,6 @@
 
 	</div>
 	<!-- /#wrapper -->
-	<script src="js/EntryForm.js"></script>
 
 </body>
 

@@ -29,8 +29,6 @@ public class DBHandler {
 	}
 	public static Connection getConnection() {
 		
-		if(connection!=null)
-			return connection;
 			
 		System.out.println("-------- Oracle JDBC Connection Testing ------");
 
@@ -69,5 +67,14 @@ public class DBHandler {
 		return connection;
 	}
 	
+	public static void closeConnection()
+	{
+		try {
+			connection.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 }

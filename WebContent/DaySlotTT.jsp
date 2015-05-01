@@ -54,52 +54,51 @@
 
 			</div>
 			<!-- /.container-fluid -->
-			<form action="TimeTableDisplay.html"
-				style="background-color: #FFFFFF">
-				<div class="form-group">
-					<label>Select Day</label> <select class="form-control" name="day">
-						<%
-							for (Day d : Day.values()) {
-						%>
-						<option value=<%=d.id%>><%=d%></option>
-						<%
-							}
-						%>
-					</select>
+			<div class="form-group" style="background-color: #FFFFFF">
+				<label>Select Day</label> <select class="form-control" id="dayid"
+					name="day">
+					<%
+						for (Day d : Day.values()) {
+					%>
+					<option value=<%=d.id%>><%=d%></option>
+					<%
+						}
+					%>
+				</select>
 
-					<div class="form-group">
-						<label>Select Time-Slot</label> <select class="form-control">
-							<%
+				<div class="form-group" style="background-color: #FFFFFF">
+					<label>Select Time-Slot</label> <select class="form-control"
+						id="slot">
+						<%
 							ArrayList<Timeslots> timeSlotList = (ArrayList<Timeslots>) session
 									.getAttribute("timeSlotList");
 
 							for (Timeslots t : timeSlotList) {
 						%>
-							<option value=<%=t.getId()%>><%=t.getStart_time() + ":00" + "-" + t.getEnd_time()
+						<option value=<%=t.getId()%>><%=t.getStart_time() + ":00" + "-" + t.getEnd_time()
 						+ ":00"%></option>
-							<%
+						<%
 							}
 						%>
 
-						</select>
-					</div>
+					</select> <input type="button" id="display" value="OK"
+						class="btn btn-default" style="margin: 0 auto; display: table">
+
+					<div id="content" style="background-color: #FFFFFF"></div>
+
+
+
 				</div>
-				<input type="submit" value="OK" class="btn btn-default" style="margin:0 auto;display:table">
-			</form>
+				<!-- /#page-wrapper -->
 
+			</div>
+			<!-- /#wrapper -->
 
-		</div>
-		<!-- /#page-wrapper -->
-
-	</div>
-	<!-- /#wrapper -->
-
-	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
-
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
-
+			<!-- jQuery -->
+			<script src="js/jquery.js"></script>
+			<!-- Bootstrap Core JavaScript -->
+			<script src="js/bootstrap.min.js"></script>
+			<script src="js/DaySlotTT.js"></script>
 </body>
 
 </html>

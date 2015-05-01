@@ -40,44 +40,65 @@
 		<%@ include file="Header.jsp"%>
 		<%@ include file="Navbar.jsp"%>
 
-		<div id="page-wrapper" >
+		<div id="page-wrapper">
 
-            <div class="container-fluid">
+			<div class="container-fluid">
 
-                <!-- Page Heading -->
-                <div class="row" style="background-color:#FFFFFF">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Faculty Time Table
-                            
-                        </h1>
-                        
-                    </div>
-                </div>
-                <!-- /.row -->
+				<!-- Page Heading -->
+				<div class="row" style="background-color: #FFFFFF">
+					<div class="col-lg-12">
+						<h1 class="page-header">Subject Wise Time Table</h1>
 
-            </div>
-            <!-- /.container-fluid -->
-            <form action="TimeTableDisplay.jsp" style="background-color:#FFFFFF">
-            <div class="form-group" >
-                                <label>Select Subject</label>
-                                <select  class="form-control" name="subject">
-                                						<%
-							ArrayList<Subject> subList = (ArrayList<Subject>) session
-									.getAttribute("subjectList");
+					</div>
+				</div>
+				<!-- /.row -->
 
-							for (Subject s : subList) {
-						%>
-						<option value=<%=s.getSubject_id()%>><%=s.getSubject_id() + ":" + s.getSubject_name()%></option>
-						<%
-							}
-						%>
-					
-                                </select>
-                            </div>
-                            <input type="submit" value="OK" class="btn btn-default" style="margin:0 auto;display:table">
-                </form>
+			</div>
+			<!-- /.container-fluid -->
+			<div class="form-group" style="background-color: #FFFFFF">
+				<label>Select Subject</label> <select class="form-control"
+					name="subject" id="subjectSelector">
+					<%
+						ArrayList<Subject> subList = (ArrayList<Subject>) session
+								.getAttribute("subjectList");
 
+						for (Subject s : subList) {
+					%>
+					<option value=<%=s.getSubject_id()%>><%=s.getSubject_id() + ":" + s.getSubject_name()%></option>
+					<%
+						}
+					%>
+
+				</select> <input id="display" type="button" value="OK"
+					class="btn btn-default" style="margin: 0 auto; display: table">
+
+				<div id="content">
+					<h1>Subject Information</h1>
+					<h3 id="subName"></h3>
+					<p id="lecCredit"></p>
+					<p id="tutCredit"></p>
+					<p id="pracCredit"></p>
+
+
+					<table class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<th>FACULTY</th>
+								<th>LECTURE</th>
+								<th>TUTORIAL</th>
+								<th>PRACTICAL</th>
+							</tr>
+						</thead>
+						<tbody id="infoBody">
+
+
+						</tbody>
+					</table>
+					<div id="daywise"></div>
+
+				</div>
+
+			</div>
 		</div>
 		<!-- /#page-wrapper -->
 
@@ -89,7 +110,7 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
-
+	<script src="js/SubjectTT.js"></script>
 </body>
 
 </html>
