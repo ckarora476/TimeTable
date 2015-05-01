@@ -54,266 +54,22 @@
 					</div>
 				</div>
 				<!-- /.row -->
-
-				<div class="row">
-					<div>
-
-						<div>
-							<table class="table table-bordered table-hover"
-								style="background-color: #FFFFFF">
-								<thead>
-									<tr>
-										<div id="Day">
-											<th>Day</th>
-										</div>
-
-										<div id="8-9">
-											<th>8-9</th>
-										</div>
-										<div id="9-10">
-											<th>9-10</th>
-										</div>
-
-										<div id="10-11">
-											<th>10-11</th>
-										</div>
-										<div id="11-12">
-											<th>11-12</th>
-										</div>
-										<div id="12-1">
-											<th>12-1</th>
-										</div>
-										<div id="1-2">
-											<th>1-2</th>
-										</div>
-										<div id="2-3">
-											<th>2-3</th>
-										</div>
-										<div id="3-4">
-											<th>3-4</th>
-										</div>
-										<div id="4-5">
-											<th>4-5</th>
-										</div>
-										<div id="5-6">
-											<th>5-6</th>
-										</div>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<div id="">
-											<th>Monday</th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-
-										<div id="">
-											<th class="center_cells">UCS803 <br> L <br>
-												B209
-											</th>
-										</div>
-										<div id="">
-											<th class="center_cells">UEI623 <br> 2EE1(T) <br> E201
-											</th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-									</tr>
-									<tr>
-										<div id="">
-											<th>Tuesday</th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-
-										<div id="">
-											<th class="center_cells">UCS803 <br> L <br> B209
-											</th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells">UEI623 <br>3EIC <br> UG-CSI
-											</th>
-										</div>
-										<div id="">
-											<th class="center_cells">UEI623 <br>3EIC <br> UG-CSI1
-											</th>
-										</div>
-									</tr>
-									<tr>
-										<div id="">
-											<th>Wednesday</th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-
-										<div id="">
-											<th class="center_cells">DEPTT SEMINAR</th>
-										</div>
-										<div id="">
-											<th class="center_cells">DEPTT SEMINAR</th>
-										</div>
-										<div id="">
-											<th class="center_cells">UCS803 <br> T <br>B209
-											</th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells">UEI623 <br>2EE2 <br>UG-CS2
-											</th>
-										</div>
-										<div id="">
-											<th class="center_cells">UEI623 <br>2EE2 <br>UG-CS2
-											</th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-									</tr>
-									<tr>
-										<div id="">
-											<th>Thrusday</th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells">UEI623 <br>2EEI <br>UG-CS2
-											</th>
-										</div>
-
-										<div id="">
-											<th class="center_cells">UCS803 <br> L <br> B209
-											</th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-									</tr>
-									<tr>
-										<div id="">
-											<th>Friday</th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-										<div id="">
-											<th class="center_cells"></th>
-										</div>
-									</tr>
-
-								</tbody>
-							</table>
-						</div>
-					</div>
-
-					<!-- /.row -->
-
-
-
-					<!-- /.row -->
-
-
-
-				</div>
-				<!-- /.row -->
-
 			</div>
-			<!-- /.container-fluid -->
-
+			
+			
+		<div id="content"  style="background-color: #FFFFFF">
+		 <input id="faculty" type="hidden" value=<%=session.getAttribute("tid")%> />
+		 
+		 
+		 
+		 
+		  
 		</div>
-		<!-- /#page-wrapper -->
+			
+			
+			
+	</div>
+	<!-- /#page-wrapper -->
 
 	</div>
 	<!-- /#wrapper -->
@@ -323,6 +79,7 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/UserHome.js"></script>
 
 </body>
 
