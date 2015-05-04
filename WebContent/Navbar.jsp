@@ -6,32 +6,10 @@
                     </li>
                     
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Under Graduate <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="#">Machine Learning</a>
-                            </li>
-                            <li>
-                                <a href="#">Computer Engineering</a>
-                            </li>
-                            <li>
-                                <a href="#">Computer Aided Graphics</a>
-                            </li>
-                        </ul>
+                        <a href="Undergraduate.jsp"><i class="fa fa-cog"></i> Under Graduate </a>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-arrows-v"></i> Post Graduate <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo1" class="collapse">
-                            <li>
-                                <a href="#">Software Engineering</a>
-                            </li>
-                            <li>
-                                <a href="#">Computer Science</a>
-                            </li>
-                            <li>
-                                <a href="#">Information Security</a>
-                            </li>
-                        </ul>
+                        <a href="javascript:;"><i class="fa fa-cog"></i> Post Graduate </a>
                     </li>
                     <li>
                         <a href="FacultyTT.jsp"><i class="fa fa-fw fa-file"></i> Faculty Time-Table</a>
