@@ -4,8 +4,8 @@
 	});*/
 $(document).ready(function() {
 	$("#teachers").select2({
-	    placeholder: "Select A Teacher",
-	    allowClear: true
+		placeholder : "Select A Teacher",
+		allowClear : true
 	});
 	$("#subjects").select2({
 		placeholder : "Select A Subject",
@@ -36,3 +36,71 @@ $(document).ready(function() {
 	});
 
 });
+
+function validateForm() {
+	//alert("started");
+	var bool = true;
+	//alert("started a");
+	var teachers = document.getElementById("teachers").value;
+	//alert("started b");
+	var subjects = document.getElementById("subjects").value;
+	//alert("started c");
+	var timeslots = document.getElementById("timeslots").value;
+	//alert("started d");
+	var day = document.getElementById("day").value;
+	//alert("started e");
+	var room = document.getElementById("room").value;
+	//alert("started f");
+	var tutgroupst = document.getElementById("tutgroupst").value;
+	//alert("started g");
+	var tutgroupend = document.getElementById("tutgroupend").value;
+	//alert("started h");
+	var ltp = document.getElementById("LTP").value;
+	//alert("started1");
+	if (teachers == null || teachers == "") {
+		document.getElementById("teacherEmpty").style.display = "inline";
+		bool = false;
+	}
+	//alert("started2");
+	if (subjects == null || subjects == "") {
+		document.getElementById("subjectEmpty").style.display = "inline";
+
+	}
+	//alert("started3");
+	if (timeslots == null || timeslots == "") {
+		document.getElementById("timeslotEmpty").style.display = "inline";
+		bool = false;
+	}
+	//alert("started4");
+	if (day == null || day == "") {
+		document.getElementById("dayEmpty").style.display = "inline";
+		bool = false;
+	}
+	//alert("started5");
+	if (room == null || room == "") {
+		document.getElementById("roomEmpty").style.display = "inline";
+		bool = false;
+	}
+	//alert("started6");
+	if (tutgroupst == null || tutgroupst == "") {
+		document.getElementById("tutgroupstEmpty").style.display = "inline";
+		bool = false;
+	}
+	//alert("started7");
+	if (tutgroupend == null || tutgroupend == "") {
+		document.getElementById("tutgroupendEmpty").style.display = "inline";
+		bool = false;
+	}
+	//alert("started8");
+	if (ltp == null || ltp == "") {
+		document.getElementById("ltpEmpty").style.display = "inline";
+		bool = false;
+	}
+	// alert("started9");
+
+	if (bool == false) {
+		document.getElementById("warn").style.display = "inline";
+		return false;
+	}
+	return bool;
+}

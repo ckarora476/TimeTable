@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>SB Admin - Bootstrap Admin Template</title>
+<title>Undergraduate TimeTable</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -35,6 +35,10 @@
 
 </head>
 <body>
+<% if(session.getAttribute("tid") == null){
+    response.sendRedirect("ErrorPage.jsp");
+}
+%>
 
 	<div id="wrapper">
 		<%@ include file="Header.jsp"%>

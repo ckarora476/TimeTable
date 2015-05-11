@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>SB Admin - Bootstrap Admin Template</title>
+<title>Home</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,6 +33,13 @@
 
 </head>
 <body>
+<%
+//allow access only if session exists
+String user = null;
+if(session.getAttribute("tid") == null){
+    response.sendRedirect("ErrorPage.jsp");
+}
+%>
 
 	<div id="wrapper">
 		<%@ include file="Header.jsp"%>

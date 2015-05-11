@@ -20,7 +20,7 @@
 }
 
 body {
-  background: #92DCE0;
+  background: #880000;
   color: #606468;
   font: 87.5%/1.5em 'Open Sans', sans-serif;
   margin: 0;
@@ -90,7 +90,7 @@ p {
 }
 
 #login form input[type="text"], input[type="password"] {
-  background-color: #ffffff;
+  background-color: #FFD700;
   border-radius: 0px 3px 3px 0px;
   color: #606468;
   margin-bottom: 1em;
@@ -102,7 +102,7 @@ p {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  background-color: #ea4c88;
+  background-color:  #d44179;
   color: #eee;
   font-weight: bold;
   margin-bottom: 2em;

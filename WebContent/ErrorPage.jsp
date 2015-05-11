@@ -9,13 +9,14 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>SB Admin - Bootstrap Admin Template</title>
+<title>Error Page</title>
 <!-- Bootstrap Core CSS -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/ErrorPage.css" rel="stylesheet">
 
 </head>
 <body>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">

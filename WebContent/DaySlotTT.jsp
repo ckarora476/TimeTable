@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>SB Admin - Bootstrap Admin Template</title>
+<title>Day Slot Wise Timetable</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -35,7 +35,11 @@
 
 </head>
 <body>
-
+	<%
+		if (session.getAttribute("tid") == null) {
+			response.sendRedirect("ErrorPage.jsp");
+		}
+	%>
 	<div id="wrapper">
 		<%@ include file="Header.jsp"%>
 		<%@ include file="Navbar.jsp"%>
@@ -46,7 +50,7 @@
 				<!-- Page Heading -->
 				<div class="row" style="background-color: #FFFFFF">
 					<div class="col-lg-12">
-						<h1 class="page-header">Faculty Time Table</h1>
+						<h1 class="page-header">Day Slot Wise Time Table</h1>
 
 					</div>
 				</div>

@@ -19,7 +19,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>SB Admin - Bootstrap Admin Template</title>
+<title>Entry Form</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -48,7 +48,11 @@
 
 </head>
 <body>
-
+	<%
+		if (session.getAttribute("tid") == null) {
+			response.sendRedirect("ErrorPage.jsp");
+		}
+	%>
 	<div id="wrapper">
 		<%@ include file="Header.jsp"%>
 		<%@ include file="Navbar.jsp"%>
@@ -70,10 +74,10 @@
 			</div>
 			<!-- /.container-fluid -->
 			<form role="form" style="background-color: #FFFFFF" action="entry"
-				method="post">
+				method="post" onsubmit="return validateForm();" name="entryForm">
 				<div>
-					<label>Teacher</label> <select name="teacher" class="form-control"
-						id="teachers">
+					<label>Teacher<span style="color: red;">*</span></label> <select
+						name="teacher" class="form-control" id="teachers">
 						<option></option>
 						<%
 							ArrayList<Teacher> teacherList = (ArrayList<Teacher>) session
@@ -85,10 +89,13 @@
 							}
 						%>
 					</select>
+					<h4 id="teacherEmpty" style="color: red; display: none;">Field
+						above should not be empty</h4>
 				</div>
+
 				<div class="form-group">
-					<label>Subject</label> <select class="form-control" id="subjects"
-						name="subject">
+					<label>Subject<span style="color: red;">*</span></label> <select
+						class="form-control" id="subjects" name="subject">
 						<option></option>
 						<%
 							ArrayList<Subject> subList = (ArrayList<Subject>) session
@@ -101,10 +108,14 @@
 							}
 						%>
 					</select>
+
 				</div>
+
+				<h4 id="subjectEmpty" style="display: none; color: red;">Field
+					above should not be empty</h4>
 				<div class="form-group">
-					<label>Time</label> <select class="form-control" id="timeslots"
-						name="slot">
+					<label>Time<span style="color: red;">*</span></label> <select
+						class="form-control" id="timeslots" name="slot">
 						<option></option>
 						<%
 							ArrayList<Timeslots> timeSlotList = (ArrayList<Timeslots>) session
@@ -119,8 +130,12 @@
 						%>
 					</select>
 				</div>
+
+				<h4 id="timeslotEmpty" style="display: none; color: red;">Field
+					above should not be empty</h4>
 				<div class="form-group">
-					<label>Day</label> <select class="form-control" id="day" name="day">
+					<label>Day<span style="color: red;">*</span></label> <select
+						class="form-control" id="day" name="day">
 						<option></option>
 						<%
 							for (Day d : Day.values()) {
@@ -131,9 +146,12 @@
 						%>
 					</select>
 				</div>
+
+				<h4 id="dayEmpty" style="display: none; color: red;">Field
+					above should not be empty</h4>
 				<div class="form-group">
-					<label>Room Number</label> <select class="form-control" id="room"
-						name="room">
+					<label>Room Number<span style="color: red;">*</span></label> <select
+						class="form-control" id="room" name="room">
 						<option></option>
 						<%
 							ArrayList<Room> roomList = (ArrayList<Room>) session
@@ -147,9 +165,12 @@
 						%>
 					</select>
 				</div>
+
+				<h4 id="roomEmpty" style="display: none; color: red;">Field
+					above should not be empty</h4>
 				<div class="form-group">
-					<label>Group Start</label> <select class="form-control"
-						id="tutgroupst" name="groupstart">
+					<label>Group Start<span style="color: red;">*</span></label> <select
+						class="form-control" id="tutgroupst" name="groupstart">
 						<option></option>
 						<%
 							ArrayList<TutGroup> tutGroupList = (ArrayList<TutGroup>) session
@@ -157,29 +178,36 @@
 
 							for (TutGroup tut : tutGroupList) {
 						%>
-						<option value=<%=tut.getId()%>><%=tut.getPrefix()+"-"+tut.getNum()%></option>
+						<option value=<%=tut.getId()%>><%=tut.getPrefix() + "-" + tut.getNum()%></option>
 						<%
 							}
 						%>
 					</select>
 				</div>
+
+				<h4 id="tutgroupstEmpty" style="display: none; color: red;">Field
+					above should not be empty</h4>
 				<div class="form-group">
-					<label>Group End</label> <select class="form-control"
-						id="tutgroupend" name="groupend">
+					<label>Group End<span style="color: red;">*</span></label> <select
+						class="form-control" id="tutgroupend" name="groupend">
 						<option></option>
 						<%
 							for (TutGroup tut : tutGroupList) {
 						%>
-						<option value=<%=tut.getId()%>><%=tut.getPrefix()+"-"+tut.getNum()%></option>
+						<option value=<%=tut.getId()%>><%=tut.getPrefix() + "-" + tut.getNum()%></option>
 						<%
 							}
 						%>
 					</select>
 				</div>
+	
+				<h4 id="tutgroupendEmpty" style="display: none; color: red;">Field
+					above should not be empty</h4>
+
 				<div class="form-group">
 
-					<label>Lecture/Tutorial/Practical</label> <select
-						class="form-control" id="LTP" name="ltp">
+					<label>Lecture/Tutorial/Practical<span style="color: red;">*</span></label>
+					<select class="form-control" id="LTP" name="ltp">
 						<option></option>
 						<%
 							for (Ltp a : Ltp.values()) {
@@ -189,7 +217,15 @@
 							}
 						%>
 					</select>
+
 				</div>
+
+				<h4 id="ltpEmpty" style="display: none; color: red;">Field
+					above should not be empty</h4>
+				<br>
+				<h4 id="warn" style="display: none; color: red;">Submission
+					contains errors. Please recheck.</h4>
+				<br>
 				<button type="submit" class="btn btn-primary">Another Entry</button>
 				<button type="submit" class="btn btn-success">Submit Button</button>
 				<button type="reset" class="btn btn-danger">Reset Button</button>

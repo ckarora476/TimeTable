@@ -34,19 +34,26 @@
 	<div class="container">
 
 		<div id="login">
+			<%
+  String  server_msg=(String)request.getAttribute("msg");
+  if(server_msg!=null){
+    %>
+			<p1 style="color:red;font-size:medium"><%=server_msg%></p1><br/><br/>
+			<%}
+ %>
 
-			<form action="authenticate;" method="post">
+			<form action="authenticate;" onsubmit="return validateForm();" method="post">
 
 				<fieldset class="clearfix">
 
 					<p>
-						<span class="fontawesome-user"></span><input type="text"
+						<span  class="fontawesome-user"></span><input id="userid" type="text"
 							name="userid"  placeholder="Username">
 					<p>
-						<span class="fontawesome-lock"></span><input type="password"
+						<span  class="fontawesome-lock"></span><input id="password" type="password"
 							name="userpass"  placeholder="Password">
 					<p>
-						<input type="submit" value="Sign In">
+						<input class="submit" type="submit" value="Sign In">
 					</p>
 
 				</fieldset>
@@ -64,7 +71,8 @@
 		<!-- end login -->
 
 	</div>
-
+<script src="js/jquery.js"></script>	
+<script src="js/Login.js"></script>
 </body>
 </html>
 
