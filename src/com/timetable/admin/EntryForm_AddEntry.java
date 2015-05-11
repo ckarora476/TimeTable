@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,80 +33,74 @@ public class EntryForm_AddEntry extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
 		HttpSession session = request.getSession();
-		PrintWriter out = response.getWriter();
-		String tid = request.getParameter("teacher");
-		int rid = Integer.parseInt(request.getParameter("room"));
-		int did = Integer.parseInt(request.getParameter("day"));
-		int time_id = Integer.parseInt(request.getParameter("slot"));
-		String sub_id = request.getParameter("subject");
-		int groupst_id = Integer.parseInt(request.getParameter("groupstart"));
-		int grouped_id=0;
-		Connection conn ;
-		if(!request.getParameter("groupend").isEmpty())
-		{ grouped_id= Integer.parseInt(request.getParameter("groupend"));}
-
-		int ltp = Integer.parseInt(request.getParameter("ltp"));
-	
-		String insertTableSQL = "INSERT INTO MASTER"
-				+ "(TID,RID,DID,TIME_ID,SUB_ID,GROUP_ID,LTP,KEY) VALUES"
-				+ "(?,?,?,?,?,?,?,?)";
-
-		if(grouped_id!=0)
-		{		
-		ArrayList<Integer> grpIdList = getGroupList(session, groupst_id,
-				grouped_id);
-
-		for (Integer grp : grpIdList) {
-			int group_id = grp.intValue();
-			try {
-				conn=DBHandler.getConnection();
-				PreparedStatement ps = conn.prepareStatement(insertTableSQL);
-				ps.setString(1, tid);
-				ps.setInt(2, rid);
-				ps.setInt(3, did);
-				ps.setInt(4, time_id);
-				ps.setString(5, sub_id);
-				ps.setInt(6, group_id);
-				ps.setInt(7, ltp);
-				ps.setTimestamp(8, getCurrentTimeStamp());
-				ps.executeUpdate();
-				DBHandler.closeConnection();
-
-			} catch (SQLException e) {
-				out.print(e.getMessage());
-				out.print("failure");
-
-			}
-			
-		}
-		}
-		else
-		{
-			int group_id=groupst_id;
-			try {
-				conn=DBHandler.getConnection();
-				PreparedStatement ps = conn.prepareStatement(insertTableSQL);
-				ps.setString(1, tid);
-				ps.setInt(2, rid);
-				ps.setInt(3, did);
-				ps.setInt(4, time_id);
-				ps.setString(5, sub_id);
-				ps.setInt(6, group_id);
-				ps.setInt(7, ltp);
-				ps.setTimestamp(8, getCurrentTimeStamp());
-				ps.executeUpdate();
-
-			} catch (SQLException e) {
-				out.print(e.getMessage());
-				out.print("failure");
-
-			}
+		int rid = 0, did = 0, time_id = 0, grouped_id = 0, groupst_id = 0, ltp = 0;
+		request.setAttribute("msg", "Entry Sucessful");
+		request.setAttribute("status", "success");
 		
-		}
+		String tid = request.getParameter("teacher");
+		try {
+			rid = Integer.parseInt(request.getParameter("room"));
+			did = Integer.parseInt(request.getParameter("day"));
+			time_id = Integer.parseInt(request.getParameter("slot"));
+			groupst_id = Integer.parseInt(request.getParameter("groupstart"));
+			grouped_id = 0;
+			ltp = Integer.parseInt(request.getParameter("ltp"));
 
-		out.print("success");
+			String sub_id = request.getParameter("subject");
+
+			Connection conn;
+			if (!request.getParameter("groupend").isEmpty()) {
+				grouped_id = Integer.parseInt(request.getParameter("groupend"));
+			}
+
+			String insertTableSQL = "INSERT INTO MASTER"
+					+ "(TID,RID,DID,TIME_ID,SUB_ID,GROUP_ID,LTP,KEY) VALUES"
+					+ "(?,?,?,?,?,?,?,?)";
+
+			if (grouped_id != 0) {
+				ArrayList<Integer> grpIdList = getGroupList(session,
+						groupst_id, grouped_id);
+
+				for (Integer grp : grpIdList) {
+					int group_id = grp.intValue();
+					conn = DBHandler.getConnection();
+					PreparedStatement ps = conn
+							.prepareStatement(insertTableSQL);
+					ps.setString(1, tid);
+					ps.setInt(2, rid);
+					ps.setInt(3, did);
+					ps.setInt(4, time_id);
+					ps.setString(5, sub_id);
+					ps.setInt(6, group_id);
+					ps.setInt(7, ltp);
+					ps.setTimestamp(8, getCurrentTimeStamp());
+					ps.executeUpdate();
+					DBHandler.closeConnection();
+
+				}
+			} else {
+				int group_id = groupst_id;
+				conn = DBHandler.getConnection();
+				PreparedStatement ps = conn.prepareStatement(insertTableSQL);
+				ps.setString(1, tid);
+				ps.setInt(2, rid);
+				ps.setInt(3, did);
+				ps.setInt(4, time_id);
+				ps.setString(5, sub_id);
+				ps.setInt(6, group_id);
+				ps.setInt(7, ltp);
+				ps.setTimestamp(8, getCurrentTimeStamp());
+				ps.executeUpdate();
+
+			}
+		} catch (Exception e) {
+			request.setAttribute("msg","Entry unsuccessfull");
+			request.setAttribute("status", "failure");
+		}
+		
+		RequestDispatcher rd = request.getRequestDispatcher("EntryForm.jsp");
+		rd.forward(request, response);
 
 	}
 

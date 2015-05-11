@@ -52,10 +52,9 @@ function validateForm() {
 	var room = document.getElementById("room").value;
 	//alert("started f");
 	var tutgroupst = document.getElementById("tutgroupst").value;
-	//alert("started g");
-	var tutgroupend = document.getElementById("tutgroupend").value;
 	//alert("started h");
 	var ltp = document.getElementById("LTP").value;
+	console.log(ltp);
 	//alert("started1");
 	if (teachers == null || teachers == "") {
 		document.getElementById("teacherEmpty").style.display = "inline";
@@ -64,7 +63,7 @@ function validateForm() {
 	//alert("started2");
 	if (subjects == null || subjects == "") {
 		document.getElementById("subjectEmpty").style.display = "inline";
-
+bool=false;
 	}
 	//alert("started3");
 	if (timeslots == null || timeslots == "") {
@@ -86,14 +85,9 @@ function validateForm() {
 		document.getElementById("tutgroupstEmpty").style.display = "inline";
 		bool = false;
 	}
-	//alert("started7");
-	if (tutgroupend == null || tutgroupend == "") {
-		document.getElementById("tutgroupendEmpty").style.display = "inline";
-		bool = false;
-	}
 	//alert("started8");
 	if (ltp == null || ltp == "") {
-		document.getElementById("ltpEmpty").style.display = "inline";
+		document.getElementById("LtpEmpty").style.display = "inline";
 		bool = false;
 	}
 	// alert("started9");

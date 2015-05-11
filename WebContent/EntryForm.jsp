@@ -38,11 +38,8 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
-<link
-	href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css"
-	rel="stylesheet" />
-<script
-	src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/select2.min.js"></script>
 
 <script src="js/EntryForm.js"></script>
 
@@ -60,7 +57,7 @@
 		<div id="page-wrapper">
 
 
-			<div class="container-fluid">
+			<div class="container-fluid" style="background-color: #FFFFFF">
 
 				<!-- Page Heading -->
 				<div class="row" style="background-color: #FFFFFF">
@@ -72,9 +69,32 @@
 				<!-- /.row -->
 
 			</div>
+
 			<!-- /.container-fluid -->
 			<form role="form" style="background-color: #FFFFFF" action="entry"
-				method="post" onsubmit="return validateForm();" name="entryForm">
+				method="post" name="entryForm" onsubmit="return validateForm();">
+
+				<div style="background-color: #FFFFFF; font-size: 30px;">
+					<%
+						String msg = (String) request.getAttribute("msg");
+						String status = (String) request.getAttribute("status");
+						if (msg != null) {
+							if (!msg.isEmpty()) {
+								if (status.equals("success")) {
+					%>
+					<p style="color: green"><%=msg%></p>
+					<%
+						} else {
+					%>
+					<p style="color: RED"><%=msg%></p>
+
+					<%
+						}
+							}
+						}
+					%>
+				</div>
+
 				<div>
 					<label>Teacher<span style="color: red;">*</span></label> <select
 						name="teacher" class="form-control" id="teachers">
@@ -187,9 +207,10 @@
 
 				<h4 id="tutgroupstEmpty" style="display: none; color: red;">Field
 					above should not be empty</h4>
+
 				<div class="form-group">
-					<label>Group End<span style="color: red;">*</span></label> <select
-						class="form-control" id="tutgroupend" name="groupend">
+					<label>Group End</label> <select class="form-control"
+						id="tutgroupend" name="groupend">
 						<option></option>
 						<%
 							for (TutGroup tut : tutGroupList) {
@@ -200,9 +221,6 @@
 						%>
 					</select>
 				</div>
-	
-				<h4 id="tutgroupendEmpty" style="display: none; color: red;">Field
-					above should not be empty</h4>
 
 				<div class="form-group">
 
@@ -220,12 +238,13 @@
 
 				</div>
 
-				<h4 id="ltpEmpty" style="display: none; color: red;">Field
+				<h4 id="LtpEmpty" style="display: none; color: red;">Field
 					above should not be empty</h4>
-				<br>
+					
+				<br/> <br />
 				<h4 id="warn" style="display: none; color: red;">Submission
 					contains errors. Please recheck.</h4>
-				<br>
+				<br /> <br />
 				<button type="submit" class="btn btn-primary">Another Entry</button>
 				<button type="submit" class="btn btn-success">Submit Button</button>
 				<button type="reset" class="btn btn-danger">Reset Button</button>
