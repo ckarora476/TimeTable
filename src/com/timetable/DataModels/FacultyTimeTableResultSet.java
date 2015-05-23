@@ -2,15 +2,24 @@ package com.timetable.DataModels;
 
 public class FacultyTimeTableResultSet {
 
-	String group;
+	String groupstart;
+	String groupend;
 	String ltp;
 	String room;
 	String subject;
-	public String getGroup() {
-		return group;
+
+	
+	public String getGroupstart() {
+		return groupstart;
 	}
-	public void setGroup(String group) {
-		this.group = group;
+	public void setGroupstart(String groupstart) {
+		this.groupstart = groupstart;
+	}
+	public String getGroupend() {
+		return groupend;
+	}
+	public void setGroupend(String groupend) {
+		this.groupend = groupend;
 	}
 	public String getLtp() {
 		return ltp;

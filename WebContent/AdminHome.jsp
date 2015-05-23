@@ -86,6 +86,9 @@ if(session.getAttribute("tid") == null){
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
+	
+		<script src="js/UserHome.js"></script>
+	
 </body>
 
 </html>

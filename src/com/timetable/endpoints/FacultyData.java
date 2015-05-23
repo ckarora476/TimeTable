@@ -45,7 +45,12 @@ public class FacultyData extends HttpServlet {
 				entry.put("slot",
 						String.valueOf(start) + "-" + String.valueOf(end));
 				if (result[j][i] != null) {
-					entry.put("group", result[j][i].getGroup());
+			String grp=result[j][i].getGroupstart();
+					if(result[j][i].getGroupend() != null)
+					{
+						grp=grp+"-"+result[j][i].getGroupend();
+					}
+					entry.put("group", grp);
 					entry.put("ltp", result[j][i].getLtp());
 					entry.put("room", result[j][i].getRoom());
 					entry.put("subject", result[j][i].getSubject());

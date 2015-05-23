@@ -15,7 +15,7 @@ public class FacultyTimeTableHelper {
 			String teacherid) {
 		Connection conn = DBHandler.getConnection();
 		FacultyTimeTableResultSet[][] result = new FacultyTimeTableResultSet[7][10];
-		String query = "SELECT DAY.DAY_ID AS DAY,SUBJECT_INFO.SUBJECT_ID AS SUBJECT,LTP.NAME AS LTP,TIMESLOTS.START_TIME,TIMESLOTS.END_TIME,ROOM.ROOM_NO AS ROOM ,TUTGROUPS.PREFIX ||'-'||TUTGROUPS.NUM AS TUTGROUP "
+		String query = "SELECT DAY.DAY_ID AS DAY,SUBJECT_INFO.SUBJECT_ID AS SUBJECT,LTP.NAME AS LTP,TIMESLOTS.START_TIME,TIMESLOTS.END_TIME,ROOM.ROOM_NO AS ROOM ,TUTGROUPS.PREFIX ||TUTGROUPS.NUM AS TUTGROUP "
 				+ "FROM (((((((MASTER "
 				+ "JOIN SUBJECT_INFO ON MASTER.SUB_ID=SUBJECT_INFO.SUBJECT_ID) "
 				+ "JOIN TEACHER_RECORD ON MASTER.TID=TEACHER_RECORD.ID) "
@@ -24,7 +24,7 @@ public class FacultyTimeTableHelper {
 				+ "JOIN ROOM ON MASTER.RID=ROOM.ROOM_ID) "
 				+ "JOIN LTP ON MASTER.LTP=LTP.ID) "
 				+ "JOIN TIMESLOTS ON MASTER.TIME_ID=TIMESLOTS.TIME_ID) "
-				+ "WHERE TEACHER_RECORD.ID=? " + "ORDER BY DAY.DAY_ID ";
+				+ "WHERE TEACHER_RECORD.ID=? " + "ORDER BY DAY.DAY_ID,TUTGROUPS.NUM ";
 
 		try {
 			PreparedStatement ps = conn.prepareStatement(query);
@@ -45,7 +45,7 @@ public class FacultyTimeTableHelper {
 
 					if (result[rowIndex][colIndex] == null) {
 						FacultyTimeTableResultSet temp = new FacultyTimeTableResultSet();
-						temp.setGroup(group);
+						temp.setGroupstart(group);
 						temp.setLtp(ltp);
 						temp.setRoom(room);
 						temp.setSubject(subject);
@@ -56,7 +56,7 @@ public class FacultyTimeTableHelper {
 					else
 					{
 						FacultyTimeTableResultSet temp=result[rowIndex][colIndex];
-						temp.setGroup(temp.getGroup()+","+group);	
+						temp.setGroupend(group);	
 					}
 				}
 
