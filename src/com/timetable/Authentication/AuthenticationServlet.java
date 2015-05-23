@@ -48,6 +48,7 @@ public class AuthenticationServlet extends HttpServlet {
 					role = rs.getString("ROLE");
 					HttpSession session=request.getSession();
 					session.setAttribute("tid", rs.getString("TID"));
+					session.setAttribute("role", role);
 					RequestDispatcher rd = request
 							.getRequestDispatcher("Info.jsp");
 					rd.forward(request, response);

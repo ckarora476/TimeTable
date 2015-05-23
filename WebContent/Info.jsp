@@ -1,4 +1,4 @@
-<%@page import="com.timetable.Database.*" %>
+<%@page import="com.timetable.Database.*"%>
 
 <% InfoPopulator info=new InfoPopulator();
    info.populateAll();
@@ -11,5 +11,14 @@
    session.setAttribute("teacherName", name);
      
 %>
-
+<%if(session.getAttribute("role").toString().equals("admin"))
+	{%>
+<jsp:forward page="AdminHome.jsp"></jsp:forward>
+<% }
+else
+{
+	%>
 <jsp:forward page="UserHome.jsp"></jsp:forward>
+
+
+<%}%>

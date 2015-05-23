@@ -2,7 +2,7 @@
          <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="UserHome.jsp"><i class="fa fa-fw fa-dashboard"></i> Home</a>
+                        <a href="AdminHome.jsp"><i class="fa fa-fw fa-dashboard"></i> Home</a>
                     </li>
                     
                     <li>
@@ -19,9 +19,6 @@
                     </li>
                     <li>
                         <a href="DaySlotTT.jsp"><i class="fa fa-fw fa-file"></i> Day Time-Table</a>
-                    </li>
-                    <li>
-                        <a href="EntryForm.jsp"><i class="fa fa-fw fa-file"></i>Entry Form</a>
                     </li>
                 </ul>
             </div>

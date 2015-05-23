@@ -4,7 +4,15 @@
                     <li>
                         <a href="UserHome.jsp"><i class="fa fa-fw fa-dashboard"></i> Home</a>
                     </li>
-                    
+                    <li>
+                        <a href="AddUser.jsp"><i class="fa fa-cog"></i> Add User </a>
+                    </li> 
+                    <li>
+                        <a href="AddSubject.jsp"><i class="fa fa-cog"></i> Add Subject </a>
+                    </li> 
+                    <li>
+                        <a href="AddTeacher.jsp"><i class="fa fa-cog"></i> Add Teacher </a>
+                    </li> 
                     <li>
                         <a href="Undergraduate.jsp"><i class="fa fa-cog"></i> Under Graduate </a>
                     </li>
