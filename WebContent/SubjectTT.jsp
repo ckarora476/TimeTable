@@ -35,14 +35,25 @@
 
 </head>
 <body>
-<% if(session.getAttribute("tid") == null){
-    response.sendRedirect("ErrorPage.jsp");
-}
-%>
+	<%
+		if (session.getAttribute("tid") == null) {
+			response.sendRedirect("ErrorPage.jsp");
+		}
+		String role = (String) session.getAttribute("role");
+	%>
 	<div id="wrapper">
 		<%@ include file="Header.jsp"%>
+		<%
+			if (role.equals("admin")) {
+		%>
+		<%@ include file="adminnavbar.jsp"%>
+		<%
+			} else {
+		%>
 		<%@ include file="Navbar.jsp"%>
-
+		<%
+			}
+		%>
 		<div id="page-wrapper">
 
 			<div class="container-fluid">

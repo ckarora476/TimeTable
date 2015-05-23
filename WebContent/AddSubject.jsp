@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Add Teacher</title>
+<title>Add Subject</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -64,19 +64,19 @@
 			<div class="form-group" style="background-color: #FFFFFF">
 
 				 <label>Subject Id</label> <input type="text"
-					class="form-control" placeholder="TeacherId"></input>
+					class="form-control" placeholder="Subject Id"></input>
 				 <label>Subject Name</label> <input type="text"
-					class="form-control" placeholder="TeacherId"></input>
+					class="form-control" placeholder="Subject Name"></input>
 				 <label>Lecture Credits</label> <input type="text"
-					class="form-control" placeholder="TeacherId"></input>
+					class="form-control" placeholder="Lecture Credits"></input>
 				 <label>Tutorial Credits</label> <input type="text"
-					class="form-control" placeholder="TeacherId"></input>
+					class="form-control" placeholder="Tutorial Credits"></input>
 				 <label>Practical Credits</label> <input type="text"
-					class="form-control" placeholder="TeacherId"></input>
+					class="form-control" placeholder="Practical Credits"></input>
 				 <label>Degree</label> <input type="text"
-					class="form-control" placeholder="TeacherId"></input>
+					class="form-control" placeholder="UG or PG"></input>
 				 <label>Year</label> <input type="text"
-					class="form-control" placeholder="TeacherId"></input>
+					class="form-control" placeholder="Year"></input>
 				
 				<br>
 				<div style="margin-left: 500px;">

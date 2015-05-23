@@ -60,19 +60,31 @@
 
 			</div>
 			<!-- /.container-fluid -->
-		<form action="?" method="post">
-			<div class="form-group" style="background-color: #FFFFFF">
+			<form action="AddTeacher" method="post">
+				<div class="form-group" style="background-color: #FFFFFF">
+					<%
+						String msg = (String)request.getAttribute("msg");
+						if (msg != null) {
+							if (msg.equals("success")) {
+					%><p style="color: green">Entry Successful</p>
+					<%
+						} else {
+					%>
+					<p style="color: red">Entry Failed</p>
+					<%
+						}
+						}
+					%>
 
-				 <label>Teacher Id</label> <input type="text"
-					class="form-control" placeholder="TeacherId"></input>
-				 <label>Teacher Id</label> <input type="text"
-					class="form-control" placeholder="TeacherId"></input>
-				
-				<br>
-				<div style="margin-left: 500px;">
-					<button type="submit" class="btn btn-success">GO</button>
+					<label>Teacher Id</label> <input name="tid"type="text" class="form-control"
+						placeholder="TeacherId"></input> <label>Teacher Name</label> <input name="tname"
+						type="text" class="form-control" placeholder="Teacher Name"></input>
+
+					<br>
+					<div style="margin-left: 500px;">
+						<button type="submit" class="btn btn-success">GO</button>
+					</div>
 				</div>
-			</div>
 			</form>
 
 			<!-- /#page-wrapper -->

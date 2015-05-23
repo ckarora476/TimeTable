@@ -46,7 +46,7 @@
 	%>
 	<div id="wrapper">
 		<%@ include file="Header.jsp"%>
-		<%@ include file="Navbar.jsp"%>
+		<%@ include file="adminnavbar.jsp"%>
 
 		<div id="page-wrapper">
 
