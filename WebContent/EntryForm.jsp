@@ -33,15 +33,9 @@
 <!-- Custom Fonts -->
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
 	type="text/css">
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
-
 <link href="css/select2.min.css" rel="stylesheet" />
-<script src="js/select2.min.js"></script>
 
-<script src="js/EntryForm.js"></script>
 
 </head>
 <body>
@@ -62,7 +56,7 @@
 				<!-- Page Heading -->
 				<div class="row" style="background-color: #FFFFFF">
 					<div class="col-lg-12">
-						<h1 class="page-header">Table Data Entry</h1>
+						<h1 class="page-header">Time-Table Data Entry</h1>
 
 					</div>
 				</div>
@@ -245,9 +239,8 @@
 				<h4 id="warn" style="display: none; color: red;">Submission
 					contains errors. Please recheck.</h4>
 				<br /> <br />
-				<button type="submit" class="btn btn-primary">Another Entry</button>
 				<button type="submit" class="btn btn-success">Submit Button</button>
-				<button type="reset" class="btn btn-danger">Reset Button</button>
+				<button id="reset" type="reset" class="btn btn-danger">Reset Button</button>
 
 			</form>
 		</div>
@@ -256,6 +249,14 @@
 
 	</div>
 	<!-- /#wrapper -->
+	<!-- jQuery -->
+<script src="js/jquery.js"></script>
+	
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/select2.min.js"></script>
+
+<script src="js/EntryForm.js"></script>
 
 </body>
 

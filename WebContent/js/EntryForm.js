@@ -35,8 +35,24 @@ $(document).ready(function() {
 		allowClear : true
 	});
 
-});
+	$("#reset").click(function(){
+	  resetAll();
+	});
 
+});
+function resetAll()
+{
+	console.log("start");
+	$("#teachers option:selected").removeAttr("selected");
+	$("#subjects  option:eq(0)").prop("selected", true); 	
+	$("#timeslots  option:eq(0)").prop("selected", true); 
+	$("#room  option:eq(0)").prop("selected", true); 
+	$("#LTP  option:eq(0)").prop("selected", true); 
+	$("#day  option:eq(0)").prop("selected", true); 
+	$("#tutgroupst  option:eq(0)").prop("selected", true); 
+	$("#tutgroupend  option:eq(0)").prop("selected", true); 
+console.log("end");
+}
 function validateForm() {
 	//alert("started");
 	var bool = true;
@@ -98,3 +114,5 @@ bool=false;
 	}
 	return bool;
 }
+
+
